@@ -1,0 +1,92 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+	<!--<link rel="stylesheet" href="jquery/jquery-ui.css" type="text/css" media="all" />-->
+	<link rel="stylesheet" href="css/profile.css" type="text/css" />
+	<link rel="stylesheet" href="http://code.jquery.com/ui/1.8.18/themes/base/jquery-ui.css" type="text/css" media="all" />
+	<script src="jquery/jquery-1.11.1.min.js"></script> 
+	<script src="jquery/jquery-ui.min.js"></script>
+	<script src="script/profile.js"></script>
+	<title>Black Pearl</title>
+</head>
+<body>
+	<div id="main">
+		<form id="form_profile" action="php/set_profile.php" method="post" enctype='multipart/form-data'>
+		<fieldset>
+		    <legend>프로필 수정</legend>
+			<div class="l">
+			    <table width="310">
+			    <tr height="35px">
+			    	<td width="50"></td>
+				    <td ><label for="id">아이디</label></td>
+				    <td><input id="id" name="id" minlength="2" readonly="readonly" /></td>
+				</tr>
+				<tr height="30px">
+					<td width="50"></td>
+				    <td><label for="password">암호</label></td>
+				    <td><input id="password" name="password" type="password" /></td>
+			    </tr>
+			    <tr height="30px">
+			    	<td width="50"></td>
+				    <td><label for="password_ok">암호 확인</label></td>
+				    <td><input id="password_ok" name="password_ok" type="password" /></td>
+			    </tr>
+			    <tr height="30px">
+			    	<td width="50"></td>
+				    <td><label for="name">이름</label></td>
+				    <td><input id="name" name="name" /></td>
+			    </tr>
+			    <tr height="30px">
+			    	<td width="50"></td>
+				    <td><label for="sex">성별</label></td>
+				    <td><input type="radio" name="sex" value="남자"> 남자 <input type="radio" name="sex" value="여자"> 여자</td>
+			    </tr>
+			    <tr height="30px">
+			    	<td width="50"></td>
+				    <td><label for="datepicker">생년월일</label></td>
+				    <td><input name="birthday" type="text" id="datepicker"></td>
+			    </tr>
+			    <tr height="30px">
+			    	<td width="50"></td>
+				    <td><label for="email">이메일</label></td>
+				    <td><input id="email" name="email" type="email" size="23"/></td>
+			    </tr>
+			    <tr height="50px">
+			    	<td width="50"></td>
+			    	<td></td>
+			    	<td><input id="set_profile" type="submit" value="프로필 수정"></td>
+			    </tr>
+			    </table>
+			    <center><div id="alert_msg"></div></center><br>
+			</div>
+			<div class="r">
+				<br>
+				<img id="user_image" src="images/user.png" width="128" height="128"/>
+				<br><br>
+				<input type='file' id='image' name='image' size='14' maxlength='32'>
+				<br><br>
+				<p style="color:#CCCCCC">프로필 사진은 128x128 픽셀로 맞추어주어야 <br>화면에 이쁘게 출력됩니다.</p>
+			</div>
+		</fieldset>
+		</form>
+	</div>
+	
+	<div id="side">
+		<ul>
+			<li><a href="#"><b>Profile 설정 안내</b></a><br /><br />
+				기본적인 기능은 아이디와 암호만으로<br> 
+				이용 가능하지만 회원들에게 보여지는 <br>
+				정보 공개 여부에 대해 현 페이지에서 <br>
+				추가 설정이 가능합니다.<br>
+				특히 아이디나 암호를 잃어버렸을 때<br>
+				설정한 이메일로 아이디와 암호를<br>
+				보내드릴 수 있습니다.<br>
+				이메일을 설정하지 않고 암호를<br>
+				잃어버렸을 시 어떠한 조치도 <br> 
+				취할 수 없는 점 양해 바랍니다.
+			</li>
+		</ul>
+	</div>
+</body>
+</html>

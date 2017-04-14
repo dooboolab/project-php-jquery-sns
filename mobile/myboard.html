@@ -1,0 +1,79 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+	<link rel="stylesheet" href="css/myboard.css" type="text/css" />
+	<script src="jquery/jquery-1.11.1.min.js"></script> 
+	<script src="jquery/jquery-ui.min.js"></script>
+	<script src="script/myboard.js"></script>
+	<title>Black Pearl</title>
+</head>
+<body>
+	<div id="main">
+        <b>글 검색</b> :
+        <input id ="search" type = "text" size="30"/>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <input id="board_write" type="button" value="글쓰기"/>
+		<div id="alert_write"></div>
+		<fieldset id="board_write_form">
+			<legend>&nbsp;글 쓰기&nbsp;</legend>
+			<form id="form_write" name="form_write" class="form_write"
+                  action="php/set_board.php" method="post"  enctype="multipart/form-data">'
+                <input id="owner" name="owner" type="hidden">
+                <div style="padding-left:4em; padding-top:1em; padding-bottom:1em;">
+                제목 : <input name="title" class="title" type="text" size="80"/></div>
+                <div style="padding-left:4em;">
+                    <textarea class="content" name="content" rows="10" cols="50"></textarea>
+                </div>
+                <div id="div_upload" style="padding-left:4em; float:left;">
+                    <ul id="ul_upload">
+                        <li><input id="user_file" name="user_file" type="file"/></li>
+                    </ul>
+                </div>
+                <div style="float:right; clear:both; padding-right:5em; padding-bottom:1em;">
+                    <input name="open" type="checkbox" value="1"> 비공개 &nbsp;&nbsp;&nbsp;&nbsp;
+                    <input name="btn_write" type = "submit" value="등록하기">
+                </div>
+                <div id="alert_msg"></div>
+			</form>
+		</fieldset>
+		<br>
+		<ul>
+			<li id="table_title"><b>▒ 게시판 ▒</b></li>
+		</ul>
+		<div class="table_head">
+			<ul style="font-weight:  bolder; color:saddlebrown;">
+                <li class="c1_img" style="background-color: white;">사진</li>
+                <li class="c2_id" style="background-color: white;">아이디</li>
+                <li class="c3_title" style="background-color: white; text-align: center;">제목</li>
+                <li class="c4_open" style="background-color: white;">비공개</li>
+                <li class="c5_date" style="background-color: white;">날짜</li>
+                <li class="c6_number" style="background-color: white">번호</li>
+			</ul>
+            <div id="table_board">
+            </div>
+
+		</div>
+		<!--<table id="table_board" border=1 bordercolor=white cellpadding=10 cellspacing=1  bgcolor=#333333></table>-->
+	</div>
+	<div id="side">
+		<ul>
+			<li>
+                <center>
+                    <a href="#"><b><div id="owner_id">admin님의</div>게시판입니다.</b></a><br /><br />
+                    <img id="owner_img" width="100" height="100"/>
+                </center>
+                <p style="padding: 10px">
+                    여러분은 2014년에 <br>
+                    만들어진 최신형 <br>
+                    게시판을 보고 <br>
+                    계십니다.<br><br>
+                    이 모든 것은<br>
+                    ajax와 jquery의<br>
+                힘입니다.
+                </p>
+			</li>
+		</ul>
+	</div>
+</body>
+</html>

@@ -1,0 +1,284 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no"/>
+	<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+    <link rel="stylesheet" href="../jquery/jquery.mobile-1.4.2.min.css"/>
+    <script type="text/javascript" src="../jquery/jquery-1.9.1.min.js"></script>
+    <script src="../jquery/jquery.mobile-1.4.2.min.js"></script>
+	<script src="script/main.js"></script>
+	<title>Black Pearl</title>
+</head>
+<body>
+
+<!-- 로그인 -->
+<div data-role="page" id="login"  data-theme="b" style="background-color: #1d1d1d">
+    <div data-role="header" data-fullscreen="true"
+         style="min-height:120px;">
+        <h1 style="padding-top: 45px; font-size: x-large; font-style: italic;">
+            Black Pearl
+        </h1>
+    </div>
+    <div data-role="content" style="padding-top:30px; min-height:336px;">
+        <form id="form_id" method="post" action="../php/login.php">
+            <div data-role="fieldcontain">
+                <label for ="id">아이디</label>
+                <input type="text" name = "id" id="id"/>
+            </div>
+            <div data-role="fieldcontain">
+                <label for ="password">암호</label>
+                <input type="password" name="password" id="password"/>
+            </div>
+            <div data-role="fieldcontain" style="padding-top: 20px;">
+                <div class="ui-grid-a">
+                    <div class="ui-block-a">
+                        <a href="#signup" data-role="button" data-transition="pop" data-back="true">회원가입</a>
+                    </div>
+                    <div class="ui-block-b">
+                        <button type="button" id="btn_login">로그인</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <div  data-role="footer" data-theme="b"
+          style="text-align: center; min-height: 61px;">
+        <p style="font-size: 13px; padding-top: 7px;">
+            Copyright all rights reserved by BlackPearl corps.
+        </p>
+    </div>
+</div>
+
+<!-- 회원가입 -->
+<div data-role="page" id="signup"  data-position="fixed"
+     data-theme="b"
+     style="background-color: #1d1d1d;">
+    <div data-role="content">
+
+        <h3 style="text-align: center; font-style: italic; padding: 15px;">Black Pearl 회원가입</h3>
+        <form id="form_signup" method="post" action="../php/signup.php">
+            <div data-role="fieldcontain">
+                <label for ="id">아이디</label>
+                <input type="text" name = "id" id="id"/>
+            </div>
+            <div data-role="fieldcontain">
+                <label for ="password">암호</label>
+                <input type="password" name="password" id="password"/>
+            </div>
+            <div data-role="fieldcontain">
+                <label for ="password_ok">암호 확인</label>
+                <input type="password" name="password_ok" id="password_ok"/>
+            </div>
+            <div data-role="fieldcontain" style="padding-top: 20px;">
+                <div class="ui-grid-a">
+                    <div class="ui-block-a">
+                        <a href="#login" data-role="button">돌아가기</a>
+                    </div>
+                    <div class="ui-block-b">
+                        <button type="button" id="btn_signup">회원가입</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <div  data-role="footer" data-theme="b"
+          style="text-align: center;">
+        <p style="font-size: 13px; padding-top: 7px;">
+            Copyright all rights reserved by BlackPearl corps.
+        </p>
+    </div>
+</div>
+
+<!-- 채팅 -->
+<div data-role="page" id="chat">
+    <div data-role="header" data-theme="b" data-fullscreen="true">
+        <h1>Black Pearl</h1>
+        <a href="#about" data-icon="info" data-transition="pop" data-rel="dialog">ABOUT</a>
+        <a href="#" data-role="button" class="btn_logout" data-icon="back">LOGOUT</a>
+    </div>
+    <div data-role="navbar">
+        <ul>
+            <li><a href="#chat" data-transition="fade" data-icon="home">Chat</a></li>
+            <li><a href="#profile" data-transition="fade" data-icon="star">Profile</a></li>
+            <li><a href="#member" data-transition="fade" data-icon="search">Member</a></li>
+            <li><a href="#myboard" data-transition="fade" data-icon="edit">My Board</a></li>
+        </ul>
+    </div>
+    <div data-role="content">
+        <ul id="table_chat" data-role="listview" data-inset="true">
+
+        </ul>
+    </div>
+    <div data-position="fixed" data-role="footer" data-theme="c">
+        <table width="100%">
+            <tr>
+                <td width ="13%">
+                    <a href="#send" data-role="button" data-rel="dialog" data-transition="slidedown">
+                        <img href="" src = "../images/earth.png" width = "22" height = "22" />
+                    </a>
+                </td>
+                <td><input id="tweet" /></td>
+                <td><button id="btn_tweet">글쓰기</button></td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<!-- 프로필-->
+<div data-role="page" id="profile">
+    <div data-role="header" data-theme="b" data-fullscreen="true">
+        <h1>Black Pearl</h1>
+        <a href="#about" data-icon="info" data-transition="pop" data-rel="dialog">ABOUT</a>
+        <a href="#" data-role="button" class="btn_logout" data-icon="back">LOGOUT</a>
+    </div>
+
+    <div data-role="navbar">
+        <ul>
+            <li><a href="#chat" data-transition="fade" data-icon="home">Chat</a></li>
+            <li><a href="#profile" data-transition="fade" data-icon="star">Profile</a></li>
+            <li><a href="#member" data-transition="fade" data-icon="search">Member</a></li>
+            <li><a href="#myboard" data-transition="fade" data-icon="edit">My Board</a></li>
+        </ul>
+    </div>
+
+    <div id="list" data-role="content">
+        <form id="form_profile" method="post" action="../php/set_profile.php">
+            <div data-role="fieldcontain">
+                <label for ="id">아이디</label>
+                <input type="text" name = "id" id="id" readonly="readonly"/>
+            </div>
+            <div data-role="fieldcontain">
+                <label for ="password">암호</label>
+                <input type="password" name="password" id="password"/>
+            </div>
+            <div data-role="fieldcontain">
+                <label for ="password_ok">암호 확인</label>
+                <input type="password" name="password_ok" id="password_ok"/>
+            </div>
+            <div data-role="fieldcontain">
+                <label for ="name">이름</label>
+                <input type="text" name="name" id="name"/>
+            </div>
+            <fieldset data-role="controlgroup">
+                <legend>성별</legend>
+                <input type="radio" name="sex" id="radio-choice-1" value="남자" checked="checked" />
+                <label for="radio-choice-1">남자</label>
+                <input type="radio" name="sex" id="radio-choice-2" value="여자"  />
+                <label for="radio-choice-2">여자</label>
+            </fieldset>
+            <div data-role="fieldcontain">
+                <label for="email">이메일</label>
+                <input type="email" name="email" id="email"/>
+            </div>
+            <div data-role="fieldcontain">
+                <label for="date">생년월일</label>
+                <input type="date" name="birthday" id="date" value=""  />
+            </div>
+            <div data-role="fieldcontain">
+                <img id="user_image" width="128" height="128"/>
+                <input type='file' id='image' name='image' size='14' maxlength='32'>
+                <p style="color:#CCCCCC">프로필 사진은 128x128 픽셀로 맞추어주어야 <br>화면에 이쁘게 출력됩니다.</p>
+            </div>
+            <div data-role="fieldcontain" style="padding-top: 20px;">
+                <div class="ui-grid-a">
+                    <div class="ui-block-a">
+                        <button type="submit" id="set_profile">프로필 수정</button>
+                    </div>
+                    <div class="ui-block-b">
+                        <a href="#chat" data-role="button">돌아가기</a>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+<!-- 회원-->
+<div data-role="page" id="member">
+    <div data-role="header" data-theme="b" data-fullscreen="true">
+        <h1>Black Pearl</h1>
+        <a href="#about" data-icon="info" data-transition="pop" data-rel="dialog">ABOUT</a>
+        <a href="#" data-role="button" class="btn_logout" data-icon="back">LOGOUT</a>
+    </div>
+
+    <div data-role="navbar">
+        <ul>
+            <li><a href="#chat" data-transition="fade" data-icon="home">Chat</a></li>
+            <li><a href="#profile" data-transition="fade" data-icon="star">Profile</a></li>
+            <li><a href="#member" data-transition="fade" data-icon="search">Member</a></li>
+            <li><a href="#myboard" data-transition="fade" data-icon="edit">My Board</a></li>
+        </ul>
+    </div>
+
+    <div id="list" data-role="content">
+        <ul id="table_member" data-role="listview" data-autodividers="true"
+            data-split-theme="d" data-inset="true" data-filter="true">
+        </ul>
+    </div>
+</div>
+
+<!-- 게시판 -->
+<div data-role="page" id="myboard">
+    <div data-role="header" data-theme="b" data-fullscreen="true">
+        <h1>Black Pearl</h1>
+        <a href="#about" data-icon="info" data-transition="pop" data-rel="dialog">ABOUT</a>
+        <a href="#" data-role="button" class="btn_logout" data-icon="back">LOGOUT</a>
+    </div>
+
+    <div data-role="navbar">
+        <ul>
+            <li><a href="#chat" data-transition="fade" data-icon="home">Chat</a></li>
+            <li><a href="#profile" data-transition="fade" data-icon="star">Profile</a></li>
+            <li><a href="#member" data-transition="fade" data-icon="search">Member</a></li>
+            <li><a href="#myboard" data-transition="fade" data-icon="edit">My Board</a></li>
+        </ul>
+    </div>
+
+    <div id="list" data-role="content">
+        <div class="ui-grid-solo">
+            <div class="ui-block-a"><button id="board_write" type="v" data-theme="b" data-mini="true">글쓰기</button></div>
+        </div>
+        <fieldset id="board_write_form">
+            <form id="form_write" name="form_write" class="form_write"
+                  action="../php/set_board.php" method="post"  enctype="multipart/form-data">
+                <div data-role="fieldcontain">
+                    <label for="title">제목</label>
+                    <input type="text" name="title" id="title" value=""  />
+                </div>
+                <div data-role="fieldcontain">
+                    <label for="content">내용</label>
+                    <textarea class="content" name="content" id="content"></textarea>
+                    <div id="div_upload">
+                        <ul id="ul_upload">
+                            <li><input id="user_file" name="user_file" type="file"/></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <input type="checkbox" name="open" id="open" class="custom" data-mini="true" value="1"/>
+                        <label for="open">비공개</label>
+                        <input name="mobile_btn_write" data-mini="true" type = "submit" value="등록하기">
+                    </div>
+                </div>
+            </form>
+        </fieldset>
+
+        <div  data-filter="true" data-inset="true" id="table_board">
+            <!--
+            <div data-role="collapsible" data-content-theme="c">
+                <h3> data[i].title - data[i].id</h3>
+                <div class="ui-grid-a">
+                    <div class="ui-block-b"><p style="font-size: 13px;">날짜 : data[i].day</p></div>
+                </div>
+                <p>data[i].content</p>
+                <p><input type="button" value="삭제하기" data-icon="delete" data-inline="true" data-mini="true"/></p>
+            </div>
+            -->
+        </div>
+
+    </div>
+</div>
+</body>
+</html>

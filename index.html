@@ -1,0 +1,50 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+	<link rel="stylesheet" href="css/main.css" type="text/css"/>
+        <script type="text/javascript" src="jquery/jquery-1.11.1.min.js"></script> 
+	<script src="jquery/jquery-ui.min.js"></script>
+	<script src="script/main.js"></script>
+	<title>Black Pearl</title>
+</head>
+<body>
+    <div id="header">
+        <div class="wrap">
+            <h1 id="logo"><a href="#" onclick="setContent('home.html')">Black Pearl</a></h1>
+            <div id="before_login">
+            <p id="form_login"><br />
+                    <form id="form_id" method="post" action="php/login.php">
+                    <p><br />
+                    아이디 : <input type="text" name = "id"/> &nbsp;
+                    암 호 : <input type="password" name="password"/>
+                    &nbsp;&nbsp;&nbsp;
+                    <input id="login" type="button" value="로그인">
+                    &nbsp;
+                    <input id="signup" type="button" value="회원가입" 
+                                    onclick ="javascript:window.open('signup.html','회원가입','width=400,height=250, top=100, left=200');"/>
+
+                    </p>
+                    </form>
+            </p>
+            </div>
+            <div id="after_login">
+            </div>
+            <div id="rlogin"></div>
+            <ul id="menu">
+                    <li><a class="current" href="#" onclick="setContent('chat.html')">Chat</a></li>
+                    <li><a href="#" onclick="setContent('profile.html')">Profile</a></li>
+                    <li><a href="#" onclick="setContent('member.html')">Member</a></li>
+                    <li id="board"><a href="#" onclick="setContent('myboard.html')">My Board</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="wrap">
+        <!--<iframe id="frame" src="chat.html" onload="autoResize(this);"></iframe>-->
+        <iframe id="frame" src="home.html"></iframe>
+        <div id="footer">
+                <p>Copyright Black Pearl All Rights Reserved</p>
+        </div>
+    </div>	
+</body>
+</html>

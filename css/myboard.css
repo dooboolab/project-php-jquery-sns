@@ -1,0 +1,163 @@
+*{margin:0;padding:0;}:focus,:active {outline:0}ul,ol{list-style:none}img{border:0} 
+body { font: .74em Sans-Serif; color: #444; background: #f4f4f4; line-height: 1.6em; }
+a { text-decoration: none; color: #505bf8; }
+p  { margin: 0 0 15px; }
+h1 { letter-spacing: -0.04em; font-size: 1.8em; text-shadow: 1px 1px 1px #000; }
+h2 { font-size: 1.4em; text-shadow: 1px 1px 1px #fff; margin: 0 0 10px; color: #008080; }
+h3 { font-size: 1.2em; margin: 15px 0 10px; }
+
+.title{
+    font-family: Arial, sans-serif;
+    font-size: 100%;
+    width: 70em; /* fallback for the next one, for browsers not recognizing ch */
+    width: 70ch; /* sets the width to 40 times the width of the digit “0” */
+}
+.content{
+	border:1px solid grey; width:450px;
+    font-family: Arial, sans-serif;
+    font-size: 100%;
+    width: 90em; /* fallback for the next one, for browsers not recognizing ch */
+    width: 90ch; /* sets the width to 40 times the width of the digit “0” */
+}
+
+#main { clear: left; float: left; width: 770px; } 
+
+
+.line { clear: both; border-bottom: 1px dotted #ccc; padding: 10px 0 0; margin: 0 0 20px; }
+
+#side { float: right;  width: 145px; color: #808080; background: #fff; padding: 11px; margin: 5px 5px 20px; }
+#side a { color: #444; }
+#side li { padding: 0 0 10px; }
+
+/* text reply */
+.txt_reply{
+    font-family: Arial, sans-serif;
+    font-size: 100%;
+    width: 62em; /* fallback for the next one, for browsers not recognizing ch */
+    width: 62ch; /* sets the width to 40 times the width of the digit “0” */
+}
+
+/* msg alert */
+#alert_msg{
+    padding-top: 2em; padding-left: 4em;color:#cd0a0a;
+}
+#alert_write{
+    color:#005599;
+}
+#alert_update{
+    color:#005599;
+}
+
+
+/* UL LI 테이블 CSS
+
+테이블 상단 보더를 만들 때 아래와 같이 :first-child 선택자를 사용하는 것이 좀 더 범용적인 방법이지만
+IE는 IE7 이후부터만 이를 제공합니다.
+.table_style ul:first-child{
+	border-top : 1px solid #000;
+}
+
+만약 첫 칼럼에 th와 같은 제목 효과를 주고자 한다면
+위에 th 속성을 구현하기 위해 사용한 두개의 속성을 없애고
+
+.table_style ul li:first-child{
+	font-weight:bold;
+	text-align:center;
+}
+와 같이 사용하면 된다.
+
+각 칼럼에의 개별 폭을 지정함
+총합(padding과 margin 포함)이 테이블의 총 폭보다 넓으면 디자인이 깨짐
+적절하게 보일 수 있도록 조정이 필요함(다른 트릭이 있을 법도 한대 아직..)
+*/
+
+#table_title{
+	background-color:#333333; color:#FFFFFF;
+	width: 769px;
+	text-align: center;
+	height: 24px;
+	padding-top: 8px;
+    cursor:pointer;
+}
+
+.hover {
+	background-color:rgba(65,65,66,0.36);
+	cursor: pointer;
+}
+
+/* 테이블 헤더 */
+.table_head{
+    width:769px; /* 전체 테이블 폭 지정 */
+}
+.table_head ul li{
+    float:left;
+    margin:0; /* 테이블 속성에 사용하던 cellspacing과 동일 */
+    padding:3px 1px;
+    border-bottom: 1px solid #000; /*테이블의 하단 보더를 만듬*/
+    border-left: 1px none #000; /*테이블의 좌측 보더를 만듬 */
+    height: 20px;
+}
+
+.table_head ul .c1_img{
+    width:45px;
+    text-align: center;
+}
+.table_head ul .c2_id{
+    width:100px;
+    text-align: center;
+}
+.table_head ul .c3_title{
+    width:368px;
+    text-align: left;
+    padding-left: 5px;
+}
+.table_head ul .c4_open{
+    width:60px;
+    text-align: center;
+}
+.table_head ul .c5_date{
+    width:120px;
+    text-align: center;
+}
+.table_head ul .c6_number{
+    width:60px;
+    /*vertical-align: middle; 잘 안됨..*/
+    text-align: center;
+}
+
+
+/* 글 읽기 테마 */
+.read{
+	height:100%;
+	width:767px;
+	border-left: 0px;
+	border-right: 0px; /* 테이블의 우측 보더를 만듬 */
+    padding-top:1em;
+}
+.read fieldset{
+    padding-left:4em;
+    padding-bottom:1em;
+}
+
+/*글 읽기 안에 li 속성은 밑줄이 들어가면 안된다*/
+.read_content{
+    float:left;
+    margin:0; /* 테이블 속성에 사용하던 cellspacing과 동일 */
+    padding:3px 1px;
+    border-bottom: 0px solid #000; /*테이블의 하단 보더를 만듬*/
+    border-left: 1px none #000; /*테이블의 좌측 보더를 만듬 */
+}
+
+/* 글 쓰기 테마 */
+.update{
+    height:100%;
+    width:767px;
+    border-left: 0px;
+    border-right: 0px; /* 테이블의 우측 보더를 만듬 */
+    padding-top:1em;
+}
+.update fieldset{
+    padding-left:4em;
+    padding-top:1em;
+    padding-bottom:1em;
+}

@@ -1,0 +1,37 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8" />
+    <!--<link rel="stylesheet" href="jquery/jquery-ui.css" type="text/css" media="all" />-->
+    <link rel="stylesheet" href="css/chat.css" type="text/css" />
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.8.18/themes/base/jquery-ui.css" type="text/css" media="all" />
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="jquery/jquery-1.11.1.min.js"></script>
+    <script src="jquery/jquery-ui.min.js"></script>
+    <script src="script/chat.js"></script>
+    <title>Black Pearl</title>
+</head>
+<body>
+<div id="main">
+    <table id="table_chat" width="620">
+    <tr>
+        <td width="80"><img src="php/user_images/admin.png" width="40" height="40"></td>
+        <td width="80" style="color: blue;">admin </td>
+        <td>안녕하세요</td>
+    </tr>
+    </table>
+    <hr><br>
+    <form id="form_tweet" name="form_tweet" method="post" action="php/set_chat.php" >
+        <input id="tweet" name="tweet" type="text" size="100"/>
+        <input id="btn_tweet" name="btn_tweet" type="button" value="tweet" placeholder="Message"/>
+    </form>
+</div>
+
+<div id="side">
+    <ul id="users">
+        <li><a href="#"><b>접속 현황</b></a></li>
+    </ul>
+</div>
+
+</body>
+</html>
